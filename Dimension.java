@@ -2,7 +2,7 @@
 /**
  *  Representa una dimensión
  *  
- *  @author - 
+ *  @author - Marce
  */
 public class Dimension  
 {
