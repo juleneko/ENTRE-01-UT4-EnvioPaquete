@@ -4,7 +4,7 @@
  *  máximo tres
  *  
  * 
- * @author -  
+ * @author -Juleneko-  
  *  
  */
 public class Envio
@@ -55,9 +55,22 @@ public class Envio
      * (dependerá de cuántos paquetes estén a null)
      */
     public int getNumeroPaquetes() {
-        //TODO
-       return 0;
-
+        int temp1=3;
+        
+        
+        if (paquete1==null) 
+        {
+            temp1=0;
+        }
+        if (paquete2==null)
+        {
+            temp1=1;
+        }
+        if (paquete3==null) 
+        {
+            temp1=2;
+        }
+        return temp1;
     }
 
     /**
@@ -65,9 +78,17 @@ public class Envio
      * (tiene exactamente 3 paquetes)
      */
     public boolean envioCompleto() {
-       //TODO
-       return false;
-
+        boolean temp1;
+        switch (getNumeroPaquetes())
+        {
+            case 1: temp1=false;
+             break;
+            case 2: temp1=false;
+             break;
+            case 3: temp1=true;
+             break;
+        }
+        return temp1;
     }
 
     /**
@@ -78,9 +99,22 @@ public class Envio
      * si se añade como primero, segundo o tercero (no han de quedar huecos)
      */
     public void addPaquete(Paquete paquete) {
-       //TODO
-        
-
+        if(paquete1==null)
+        {
+            paquete1 = paquete;
+        }
+        if(paquete2== null && paquete1!=null)
+        {
+            paquete2 = paquete;
+        }
+        if(paquete3==null && paquete2!= null && paquete1!=null)
+        {
+            paquete3 = paquete;
+        }
+        if(paquete3!=null && paquete2!= null && paquete1!=null)
+        {
+            System.out.println("No se admiten más paquetes en el envío");
+        }
     }
 
     /**
@@ -95,9 +129,7 @@ public class Envio
      *  
      */
     public double calcularCosteTotalEnvio() {
-        //TODO
-       return 0;
-
+    
     }
 
     /**
@@ -106,8 +138,9 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-       //TODO
-       return null;
+        System.out.println("numero paquetes: " + getNumeroPaquetes());
+        System.out.println("descripcion paquete");
+        return paquete.toString();
     }
 
     /**
